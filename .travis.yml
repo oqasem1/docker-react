@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t oqasem1/dcoker-react -f Dockerfile.dev .
+
+script:
+  - docker run oqasem1/dcoker-react npm run test -- --coverage
